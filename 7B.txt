@@ -1,0 +1,3 @@
+SELECT nama.name, work.job, category.salary FROM nama INNER JOIN work ON nama.id_work = work.id INNER JOIN category ON category.id = nama.id_salary
+
+
