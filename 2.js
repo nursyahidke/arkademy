@@ -1,29 +1,36 @@
-// Fungsi validasi username
-function username(){
-	var nama = "Nursyahid";
-   	pola_username=/^[a-zA-Z0-9]{5,9}$/;
-   	if (!pola_username.test(nama)){
-      	console.log ('Username minimal 5-9 karakter dan hanya boleh Huruf atau Angka!');
+input();
 
-   	}else{
-		console.log("Username Anda benar!");   		
-   	}
-
+function input(){
+    let user_name = '1Nursyahid';
+    let pass_word = '1qwA';
+    
+    is_username_valid(user_name);
+    is_password_valid(pass_word);
 }
 
-username();
+// is_username_valid("@sony");
+// is_username_valid("Ayu99v");
+// is_password_valid("p@ssW0rd#");
+// is_password_valid("C0d3YourFuture!#");
 
-// Fungsi validasi password
-function password(){
-	var pwd = "qdndndnNNNN1222";
-  	pola_pwd=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,100}$/g;
-  	if (!pola_pwd.test(pwd)){
-    	console.log('Penulisan password tidak benar!');
-
-  	}else{
-  		console.log('Penulisan password benar!');		
-  	}
-  
+function is_username_valid(username){
+    let usn = /^[^0-9$&\+,:;\=\?@#|'<>\.\-_^\*()%!][$&\+,:;\=\?@#|'<>\.\-_^\*()%!0-9a-zA-z]{5,9}$/;
+    if(username.match(usn)){
+        // return true;
+        console.log(true);
+    }else{
+        // return false;
+        console.log(false);
+    }
 }
 
-password();
+function is_password_valid(password){
+    let pwd = /^(?=.*[@])(?=.*[A-Z])(?=.*[$&\+,:;\=\?#|'<>\.\-_^\*()%!])[$&\+,:;\=\?@#|'<>\.\-_^\*()%!0-9a-zA-z]{8,}$/;
+    if(password.match(pwd)){
+        // return true;
+        console.log(true);
+    }else{
+        // return false;
+        console.log(false);
+    }
+}
